@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html><head><meta charset=utf-8 />
+<title>Change the content of a cell</title>
+<script>
+    document.addEventListener('DOMContentLoaded',()=>{
+        document.querySelector('input[type=button]').onclick=()=>{
+            let row=parseInt(prompt('Enter row: '))-1;
+            let column=parseInt(prompt('Enter cell: '))-1;
+            let content=prompt('Enter content: ');
+            if(Number.isInteger(row) && Number.isInteger(column))
+            {
+                let table=document.getElementById('myTable');
+                var cell = table.rows[row].cells[column];
+                cell.innerText=content;
+                cell.style.color='red';
+            }
+            else
+            {
+                alert(`${row} and ${cell} are not numbers.`);
+            }
+        }
+    });
+</script>
+</head>
+<body>
+<table id="myTable" border="1">
+<tr><td>Row1 cell1</td>
+<td>Row1 cell2</td></tr>
+<tr><td>Row2 cell1</td>
+<td>Row2 cell2</td></tr>
+<tr><td>Row3 cell1</td>
+<td>Row3 cell2</td></tr>
+</table><form>
+<input type="button" value="Change content">
+</form>
+</body>
+</html>

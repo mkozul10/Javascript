@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Change the content of a cell</title>
+<style type="text/css">
+body {margin: 30px;}
+</style>  
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded',()=>{
+        let rows=parseInt(prompt('Enter row: '))-1;
+            let cols=parseInt(prompt('Enter cell: '))-1;
+            document.querySelector('input[type="button"]').addEventListener('click', function() {
+  // Get the number of rows and columns from the user input
+  var rows = parseInt(prompt("Enter the number of rows:"));
+  var cols = parseInt(prompt("Enter the number of columns:"));
+  
+  // Create a new table element
+  var table = document.createElement("table");
+  
+  // Loop through each row and create a new row element
+  for (var i = 0; i < rows; i++) {
+    var row = table.insertRow();
+    
+    // Loop through each column and create a new cell element
+    for (var j = 0; j < cols; j++) {
+      var cell = row.insertCell();
+      
+      // Set the cell's contents to its row and column numbers
+      cell.innerHTML = "Row-" + i + " Column-" + j;
+    }
+  }
+  
+  // Add the table to the document's body
+  document.getElementById("myTable").appendChild(table);
+});
+});
+</script>
+<body>
+<table id="myTable" border="1">
+</table><form>
+<input type="button" value="Create the table">
+</form></body></html>

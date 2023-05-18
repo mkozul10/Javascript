@@ -1,0 +1,23 @@
+<html>
+<head>
+<meta charset=utf-8 />
+<title>JS DOM paragraph style</title>
+<script>
+    document.addEventListener('DOMContentLoaded',function (){
+        document.getElementById('jsstyle').onclick=()=>{
+            let tag=document.getElementById('text');
+            tag.style.font='sans-serif';
+            tag.style.color='red';
+            tag.style.fontSize='30px';
+            tag.style.backgroundColor='blue';
+        }
+    });
+</script>
+</head> 
+<body>
+<p id ='text'>JavaScript Exercises - w3resource</p> 
+<div>
+<button id="jsstyle">Style</button>
+</div>
+</body>
+</html>

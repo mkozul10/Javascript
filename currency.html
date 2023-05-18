@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var myHeaders = new Headers();
+        myHeaders.append("apikey", "3f60Ev83HjF8e6NgtzwIKbFx7ZSFkywt");
+
+        var requestOptions = {
+        method: 'GET',
+        redirect: 'follow',
+        headers: myHeaders
+        };
+
+        fetch("https://api.apilayer.com/exchangerates_data/latest?symbols=GBP%2CEUR%2CJPY&base=USD", requestOptions)
+        .then(response => response.text())
+        .then(data => {
+            const rate=data.rates.GBP;
+            document.querySelector('body').innerHTML=rate;
+            
+        })
+        .catch(error => console.log('error', error));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
